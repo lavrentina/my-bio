@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider } from "@chakra-ui/react";
+import { AlertProvider } from "./context/alertContext";
+import Alert from "./components/Alert";
+import Header from "./components/Header";
+import LandingSection from "./components/LandingSection";
+import ProjectsSection from "./components/ProjectsSection";
+import Form from "./components/Form";
+import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<ChakraProvider>
+			<AlertProvider>
+				<main>
+					<Header />
+					<LandingSection />
+					<ProjectsSection />
+					<Form />
+					<Footer />
+					<Alert />
+				</main>
+			</AlertProvider>
+		</ChakraProvider>
+	);
 }
 
 export default App;
